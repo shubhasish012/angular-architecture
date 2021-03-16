@@ -1,3 +1,11 @@
-<p>shared works!</p>
+<p>Form</p>
 
-<app-button>Test Button</app-button>
+<app-button (click)="onPatchValue()">Patch Value</app-button>
+
+<form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
+  <app-input formControlName="input"></app-input>
+</form>
+
+<code>
+  {{form.value | json}}
+</code>
